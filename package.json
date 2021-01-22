@@ -1,0 +1,35 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "A discord bot to use in my daily work",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "nodemon src/bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelhodar/discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Angel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angelhodar/discord-bot/issues"
+  },
+  "homepage": "https://github.com/angelhodar/discord-bot#readme",
+  "dependencies": {
+    "@keyv/redis": "^2.1.2",
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "keyv": "^4.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
