@@ -5,17 +5,20 @@ const { isCommand, isValidCommand, handleCommand } = require("./commands");
 
 const client = new Client();
 
-client.once("ready", () => {
+const handleReady = () => {
   console.log("Bot is ready!");
-});
+};
 
-client.on("message", async (message) => {
+const handleMessage = async (message) => {
   if (!message.author.bot) {
     if (isCommand(message)) {
       if (isValidCommand) await handleCommand(message);
       else message.channel.send("No entiendo ese comando");
     }
   }
-});
+};
+
+client.once("ready", handleReady);
+client.on("message", handleMessage);
 
 client.login(process.env.DISCORD_TOKEN);
