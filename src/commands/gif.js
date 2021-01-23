@@ -7,7 +7,7 @@ module.exports = {
   name: "/gif",
   usage: "/gif",
   description: "Get a random gif",
-  handler: async (message, args) => {
+  handler: async ({ message }) => {
     const { data } = await axios.get(endpoint);
     const attachment = new MessageAttachment(data.data.images.original.url);
     message.channel.send(attachment);
