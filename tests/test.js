@@ -12,8 +12,8 @@ const query = {
 
 (async () => {
   try {
-    const res = await calendar.events.list(query);
-    console.log(res.data);
+    const { data } = await calendar.events.list(query);
+    console.log(JSON.stringify(data));
   } catch (err) {
     console.log(`The API returned an error: ${err}`);
   }

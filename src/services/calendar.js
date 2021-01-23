@@ -1,6 +1,6 @@
 const { google } = require("googleapis");
 
-const credentials = JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS);
+const credentials = JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS_PERSONAL);
 
 const client = new google.auth.JWT({
   email: credentials.client_email,
