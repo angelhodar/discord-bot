@@ -42,4 +42,32 @@ const createCalendarEventEmbed = (event) => {
     );
 };
 
-module.exports = { formatDate, createCalendarEventEmbed };
+const createWorkPackageEmbed = (wpackage) => {
+  return new MessageEmbed()
+    .setColor("#0099ff")
+    .setTitle(wpackage.subject)
+    .setDescription(wpackage.description || "")
+    .addFields(
+      {
+        name: "Created",
+        value: formatDate(wpackage.createdAt),
+        inline: true,
+      },
+      {
+        name: "Percentage Completed",
+        value: wpackage.percentageDone,
+        inline: true,
+      },
+      {
+        name: "Story Points",
+        value: wpackage.storyPoints,
+        inline: true,
+      }
+    );
+};
+
+module.exports = {
+  formatDate,
+  createCalendarEventEmbed,
+  createWorkPackageEmbed,
+};

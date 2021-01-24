@@ -1,3 +1,5 @@
+const { createWorkPackageEmbed } = require("../utils");
+
 module.exports = {
   name: "/openproject",
   usage: "/openproject <maxResults>",
@@ -5,6 +7,9 @@ module.exports = {
   handler: async ({ message, args, services }) => {
     const { openproject } = services;
     const [maxResults] = args;
-    // TODO: Implement openproject handler
-  },
+    const packages = await openproject.getWorkPackages(maxResults);
+    packages.map(wpackage => {
+      message.channel.send(createWorkPackageEmbed(wpackage));
+    });
+  }
 };

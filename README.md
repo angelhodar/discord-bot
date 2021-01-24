@@ -4,12 +4,14 @@ This repo aims to create a scalable, flexible and rick featured discord bot to u
 
 ## Features
 
-The bot provides the following features:
+The bot provides the following features at the moment:
 
-* Easy to add new commands
-* Agnostic database backend for persistent data using [keyv](https://github.com/lukechilds/keyv)
+* Extremely easy to add new commands using **dependency inyection**
+* **Agnostic** database backend for **persistent data** using [keyv](https://github.com/lukechilds/keyv)
+* **Google Calendar API** support
+* **OpenProject API** support (experimental)
 
-## Getting started
+## Development
 
 Install dependencies:
 

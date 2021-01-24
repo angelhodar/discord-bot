@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const calendar = require("../src/services/calendar.js");
+const { calendar, openproject } = require("../src/services");
 
 const query = {
   calendarId: "angelhodar76@gmail.com",
@@ -12,8 +12,8 @@ const query = {
 
 (async () => {
   try {
-    const { data } = await calendar.events.list(query);
-    console.log(JSON.stringify(data));
+    const packages = await openproject.getWorkPackages(2);
+    packages.map(p => console.log(JSON.stringify(packages)));
   } catch (err) {
     console.log(`The API returned an error: ${err}`);
   }
