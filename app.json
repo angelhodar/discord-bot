@@ -17,9 +17,9 @@
       "required": true
     },
     "DB_URL": {
-      "description": "The url of your custom database",
+      "description": "The url of your custom database. If you had one already put here. If not, use the one generated when the app is deployed",
       "value": "",
-      "required": true
+      "required": false
     },
     "OPENPROJECT_API_KEY": {
       "description": "Your generated OpenProject API key",
