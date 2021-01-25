@@ -1,0 +1,36 @@
+{
+  "name": "Discord Bot",
+  "description": "A discord bot to use in daily work",
+  "repository": "https://github.com/angelhodar/discord-bot",
+  "logo": "https://logo-logos.com/wp-content/uploads/2018/03/Discord_icon.png",
+  "keywords": ["node", "discord", "bot", "work", "daily", "business"],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "env": {
+    "DISCORD_TOKEN": {
+      "description": "Your custom bot token",
+      "value": "",
+      "required": true
+    },
+    "DB_URL": {
+      "description": "The url of your custom database",
+      "value": "",
+      "required": true
+    },
+    "OPENPROJECT_API_KEY": {
+      "description": "Your generated OpenProject API key",
+      "value": "",
+      "required": false
+    },
+    "GOOGLE_SERVICE_CREDENTIALS": {
+      "description": "The 1 line JSON credentials you obtain when creating your service account in Google Cloud Platform",
+      "value": "",
+      "required": false
+    }
+  },
+  "addons": ["heroku-redis:hobby-dev"]
+}

@@ -2,6 +2,8 @@
 
 This repo aims to create a scalable, flexible and rick featured discord bot to use in my daily work and with my team mates.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Features
 
 The bot provides the following features at the moment:
