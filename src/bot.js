@@ -1,19 +1,18 @@
-require("dotenv").config();
-
 const { Client } = require("discord.js");
 const { isCommand, isValidCommand, handleCommand } = require("./commands");
+const { discord_token } = require("./config");
 
 const client = new Client();
 
 const handleReady = () => {
-  console.log("Bot is ready!");
+  console.log("Bot ready and listening to requests...");
 };
 
 const handleMessage = async (message) => {
   if (!message.author.bot) {
     if (isCommand(message)) {
       if (isValidCommand) await handleCommand(message);
-      else message.channel.send("No entiendo ese comando");
+      else message.channel.send("Command not available");
     }
   }
 };
@@ -21,4 +20,4 @@ const handleMessage = async (message) => {
 client.once("ready", handleReady);
 client.on("message", handleMessage);
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(discord_token);

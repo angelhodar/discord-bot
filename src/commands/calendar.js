@@ -4,6 +4,10 @@ module.exports = {
   name: "/calendar",
   usage: "/calendar <email> <maxResults>",
   description: "Shows the next <maxResults> meetings for <email> user calendar",
+  canBeExecuted: ({ config, services }) => {
+    const { calendar } = services;
+    return config.GOOGLE_SERVICE_CREDENTIALS && calendar;
+  },
   handler: async ({ message, args, services }) => {
     const { calendar } = services;
     const [email, maxResults] = args;

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const db = require("../db");
+const config = require("../config");
 const services = require("../services");
 
 const excluded = ["index.js"];
@@ -23,8 +24,9 @@ const isValidCommand = (message) => {
 const handleCommand = async (message) => {
   const [commandName, ...args] = parseCommand(message);
   const command = commands.find((c) => c.name === commandName);
-  const ctx = { message, args, commands, db, services };
-  await command.handler(ctx);
+  const ctx = { message, args, commands, db, services, config };
+  if (command.canBeExecuted) await command.handler(ctx);
+  else message.channel.send(`Command ${commandName} cant be executed because bot is not properly configured`);
 };
 
 module.exports = { handleCommand, isValidCommand, isCommand };

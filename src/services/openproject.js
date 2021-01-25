@@ -1,9 +1,9 @@
 const axios = require("axios");
-
+const { openproject_api_key } = require("../config");
 
 const auth = {
   username: "apikey",
-  password: process.env.OPENPROJECT_API_KEY,
+  password: openproject_api_key,
 };
 
 const op_client = axios.create({

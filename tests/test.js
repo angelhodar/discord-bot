@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const { calendar, openproject } = require("../src/services");
 
 const query = {
